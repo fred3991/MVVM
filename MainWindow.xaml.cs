@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace MVVM
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow. xaml
+    /// Логика взаимодействия для MainWindow. x aml
     /// </summary>
     public partial class MainWindow : Window
     {
