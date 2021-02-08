@@ -26,7 +26,7 @@ namespace MVVM.ViewModel.Base
         }
 
 
-        //~ViewModel()
+        //~ViewModel( )
         //{
         //    Dispose(false);
         //}
