@@ -13,7 +13,7 @@ namespace MVVM.ViewModel
 {
     internal class MainWindowViewModel : Base.ViewModel
     {
-        private string _Title;
+        private string _Title = "Анализ статистики COVID-19";
 
 
         #region Заголовок окна
