@@ -11,7 +11,68 @@
         <vm:MainWindowViewModel/>
     </Window.DataContext>
 
-    <Grid>
-        <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-    </Grid>
+    <!--<Grid>
+        --><!--<TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+
+        <!--<Slider 
+            VerticalAlignment="Top" HorizontalAlignment="Left" Margin="30" Width="500" Value="{Binding Title}"
+            >
+            
+        </Slider>--><!-- 
+        
+        
+        
+    </Grid>-->
+
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход">                  
+                </MenuItem>
+            </MenuItem>
+            
+            <MenuItem Header="Помощь">
+                <MenuItem Header="О программе">
+                </MenuItem>
+            </MenuItem>
+  
+
+        </Menu>
+        
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem MaxWidth="350" MinWidth="150">
+                <TextBlock Text="Готово"></TextBlock>
+            </StatusBarItem>
+            <StatusBarItem>
+                <ProgressBar Width="120" Height="14" Value="100" >
+                    
+                </ProgressBar>
+            </StatusBarItem>
+
+        </StatusBar>
+        
+        
+        <TabControl>
+            <TabItem Header="Вкладка 1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50*"></RowDefinition>
+                        <RowDefinition Height="150*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50*"></ColumnDefinition>
+                        <ColumnDefinition Width="100*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle Grid.Row="0" Grid.Column="0" Fill="Aquamarine" Stroke="Black" StrokeThickness="2" RadiusX="55" RadiusY="10" Margin="7"></Rectangle>
+                    <Ellipse Grid.Row="0" Grid.Column="1" Fill="Red" Stroke="Black" StrokeThickness="2" Margin="7"></Ellipse>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вкладка 2"></TabItem>
+            <TabItem Header="Игрок 3"></TabItem>
+        </TabControl>
+    </DockPanel>
+    
+    
+    
 </Window>
