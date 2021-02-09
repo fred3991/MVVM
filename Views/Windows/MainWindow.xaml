@@ -28,7 +28,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Выход">                  
+                <MenuItem Header="Выход" Command="Cut">                  
                 </MenuItem>
             </MenuItem>
             
@@ -42,7 +42,7 @@
         
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem MaxWidth="350" MinWidth="150">
-                <TextBlock Text="Готово"></TextBlock>
+                <TextBlock Text="{Binding Status}"></TextBlock>
             </StatusBarItem>
             <StatusBarItem>
                 <ProgressBar Width="120" Height="14" Value="100" >
@@ -66,6 +66,7 @@
                     </Grid.ColumnDefinitions>
                     <Rectangle Grid.Row="0" Grid.Column="0" Fill="Aquamarine" Stroke="Black" StrokeThickness="2" RadiusX="55" RadiusY="10" Margin="7"></Rectangle>
                     <Ellipse Grid.Row="0" Grid.Column="1" Fill="Red" Stroke="Black" StrokeThickness="2" Margin="7"></Ellipse>
+                    <GridSplitter Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Right" Width="4"></GridSplitter>
                 </Grid>
             </TabItem>
             <TabItem Header="Вкладка 2"></TabItem>

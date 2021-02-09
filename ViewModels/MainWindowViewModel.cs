@@ -36,6 +36,14 @@ namespace MVVM.ViewModel
         }
 
         #endregion
+        /// <summary>
+        /// Статус программы??
+        /// </summary>
+        /// //Поле
+        private string _Status = "Готово!";
+        //свойство сет
+        public string Status { get => _Status; set => Set(ref _Status, value); }
+
 
     }
 }
