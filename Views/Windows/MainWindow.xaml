@@ -11,7 +11,20 @@
     <Window.DataContext>
         <vm:MainWindowViewModel/>
     </Window.DataContext>
+    <Window.InputBindings>
+        <KeyBinding Modifiers="Alt" Key="Q" Command="{Binding CloseApplicationCommand}">
+            
+        </KeyBinding>
+    </Window.InputBindings>
 
+    <Window.Resources>
+        <cmd:CloseApplicationCommand x:Key="CloseApplicationCommandKey">
+            
+        </cmd:CloseApplicationCommand>
+    </Window.Resources>
+    
+    
+    
     <!--<Grid>
         --><!--<TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
 
@@ -30,10 +43,10 @@
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
                 <!--<MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}"></MenuItem>-->
-                <MenuItem Header="Выход">
-                    <MenuItem.Command>
+                <MenuItem Header="Выход" Command="{StaticResource CloseApplicationCommandKey}">
+                    <!--<MenuItem.Command>
                         <cmd:CloseApplicationCommand></cmd:CloseApplicationCommand>
-                    </MenuItem.Command>
+                    </MenuItem.Command>-->
                 </MenuItem>
             </MenuItem>
             
@@ -70,7 +83,19 @@
                         <ColumnDefinition Width="100*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Rectangle Grid.Row="0" Grid.Column="0" Fill="Aquamarine" Stroke="Black" StrokeThickness="2" RadiusX="55" RadiusY="10" Margin="7"></Rectangle>
-                    <Ellipse Grid.Row="0" Grid.Column="1" Fill="Red" Stroke="Black" StrokeThickness="2" Margin="7"></Ellipse>
+                    <Ellipse Grid.Row="0" Grid.Column="1" Fill="Red" Stroke="Black" StrokeThickness="2" Margin="7">
+                        <Ellipse.InputBindings>
+                            <MouseBinding Command="{Binding CloseApplicationCommand}"
+                                          MouseAction="LeftDoubleClick"
+                                          
+                                          >
+                                           
+                            </MouseBinding>
+                        </Ellipse.InputBindings>
+                        
+                    </Ellipse>
+                    
+                    
                     <GridSplitter Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Right" Width="4"></GridSplitter>
                 </Grid>
             </TabItem>
