@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM"
         xmlns:vm="clr-namespace:MVVM.ViewModel"
+        xmlns:cmd="clr-namespace:MVVM.Infrastructure.Commands.Base"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800">
     <Window.DataContext>
@@ -28,7 +29,11 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}">                  
+                <!--<MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}"></MenuItem>-->
+                <MenuItem Header="Выход">
+                    <MenuItem.Command>
+                        <cmd:CloseApplicationCommand></cmd:CloseApplicationCommand>
+                    </MenuItem.Command>
                 </MenuItem>
             </MenuItem>
             
