@@ -7,15 +7,15 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 using MVVM.ViewModel.Base;
-
+using System.Windows.Input;
+using MVVM.Infrastructure.Commands;
+using System.Windows;
 
 namespace MVVM.ViewModel
 {
     internal class MainWindowViewModel : Base.ViewModel
     {
         private string _Title = "Анализ статистики COVID-19";
-
-
         #region Заголовок окна
 
         /// <summary>
@@ -36,14 +36,36 @@ namespace MVVM.ViewModel
         }
 
         #endregion
-        /// <summary>
-        /// Статус программы??
-        /// </summary>
-        /// //Поле
+        #region Cтатус программы
         private string _Status = "Готово!";
         //свойство сет
         public string Status { get => _Status; set => Set(ref _Status, value); }
+        #endregion
 
 
+        #region Команды
+
+        #region CloseApplicationCommand
+
+        public ICommand CloseApplicationCommand { get;  }
+
+        private void OnCloseApplicationCommandExecuted(object p)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private bool CanCloseApplicationCommandExecute(object p) => true;
+
+        #endregion
+        #endregion
+
+        public MainWindowViewModel()
+        {
+            #region Команды
+
+            CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
+
+            #endregion
+        }
     }
 }

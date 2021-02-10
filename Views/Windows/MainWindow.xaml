@@ -28,7 +28,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Выход" Command="Cut">                  
+                <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}">                  
                 </MenuItem>
             </MenuItem>
             
