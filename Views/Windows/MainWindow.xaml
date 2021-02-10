@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:MVVM"
         xmlns:vm="clr-namespace:MVVM.ViewModel"
         xmlns:cmd="clr-namespace:MVVM.Infrastructure.Commands.Base"
+        xmlns:fa="http://schemas.fontawesome.com/icons/"
         mc:Ignorable="d"
         Title="{Binding Title}" Height="450" Width="800">
     <Window.DataContext>
@@ -72,7 +73,18 @@
         
         
         <TabControl>
-            <TabItem Header="Вкладка 1">
+            <TabItem>
+                <TabItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Regular_File" Height="14" Margin="0, 0, 5, 0" Foreground="BlueViolet">
+                                
+                        </fa:ImageAwesome>
+                        <TextBlock Text="Вкладка 1 с иконкой">
+                            
+                        </TextBlock>
+                    </StackPanel>
+                </TabItem.Header>
+                
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50*"></RowDefinition>
